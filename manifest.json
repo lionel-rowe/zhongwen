@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Zhongwen: Chinese-English Dictionary",
   "short_name": "Zhongwen",
   "version": "5.15.0",
@@ -10,10 +10,6 @@
     "16": "images/zhongwen16.png",
     "48": "images/zhongwen48.png",
     "128": "images/zhongwen.png"
-  },
-  "browser_action": {
-    "default_icon": "images/zhongwen48.png",
-    "default_title": "Zhongwen Chinese Popup Dictionary"
   },
   "background": {
     "page": "background.html"
@@ -48,8 +44,20 @@
     }
   },
   "web_accessible_resources": [
-    "css/*",
-    "js/*",
-    "images/*"
-  ]
+    {
+      "resources": [
+        "css/*",
+        "js/*",
+        "images/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": "images/zhongwen48.png",
+    "default_title": "Zhongwen Chinese Popup Dictionary"
+  },
+  "content_security_policy": {}
 }
